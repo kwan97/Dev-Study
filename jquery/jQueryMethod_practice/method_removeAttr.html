@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8b">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            font-size: 30px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(document).ready(function () { //input 요소의 placeholder 속성을 제거
+
+            $('input').removeAttr('placeholder');
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="address" placeholder="Input Address">
+</body>
+</body>
+</html>

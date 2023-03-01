@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ab {
+            background-color: #f5f5f5;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //버튼 클릭시 h1 요소에 ab 클래스 값이 추가되어 배경색이 생기고, 
+            //다시 버튼 클릭시 ab 클래스 값이 제거되어 배경색 사라짐
+            $('button').click(function () {
+                $('h1').toggleClass('ab');
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <button>Click</button>
+    <h1>Lorem Ipsum Dolor</h1>
+</body>
+
+</html>

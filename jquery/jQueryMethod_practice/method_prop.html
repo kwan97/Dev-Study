@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <p><a href="#">Link</a></p>
+
+    <!-- a 요소의 href 속성값을 .attr()과 .prop()로 가져오는 예제 -->
+    <p>
+        <script>
+            document.write($('a').attr('href'));
+            // 결과 :  #
+            document.write('<br>');
+            document.write($('a').prop('href'));
+            // 결과 : http://www.localhost:8080/front/intro/join#none"
+        </script>
+    </p>
+</body>
+
+</html>

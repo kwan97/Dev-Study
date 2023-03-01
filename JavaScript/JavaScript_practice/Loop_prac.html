@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h2>JS Loop 예제문 정리</h2>
+
+    <script>
+        /*for문*/
+        const boo = ["BMW", "Volvo", "Saab", "Ford"];
+        for (let i = 0; i < boo.length; i++) {
+            let la = boo[i]
+            console.log('for문: ',la);
+        };
+
+
+        /*for...of문*/
+        let arr = ['a', 'b', 'c'];
+        let kyu = "hi";
+        for (let x of arr) {
+            console.log('for...of문 배열 출력: ',x);
+        }
+
+        for (let la of kyu) {
+            console.log('for...of문 문자열 출력: ',la);
+        }
+        
+
+        /*for...in문 예제*/
+        //인덱스 순서가 중요할 경우 for...in 비추천; for / for...of / Array.forEach() 사용 추천!
+
+        // 객체(Object) 적용 예제
+        const person = { fname: "John", lname: "Doe", age: 25 };
+
+        for (let a in person) {
+            console.log('for문+객체 입니다=> ',a);
+        };
+
+        // 배열(Array) 적용 예제
+        const cars = ["BMW", "Volvo", "Saab", "Ford"];
+        for (let c in cars) {
+            console.log('for문+배열 입니다=> ',c);
+        };
+
+        //Array.forEach()란?*/
+        // 각 배열 요소에 대해 한 번씩 함수(콜백 함수)를 호출 해줌.
+        const numbers = [45, 4, 9, 16, 25];
+
+        function myFunction(value) {
+            console.log('forEach() 함수: ',value);
+        }
+        numbers.forEach(myFunction);
+
+
+        /*do...while문 예제*/
+        let i = 0;
+        do {
+            if(i==3) break;
+            console.log(`do while문: ${i}`);
+            i++;
+        }
+        while (i < 5); //코드 블록을 한 번 실행한 다음 조건(i < 5)이 참이면 마저 진행
+
+
+
+        /*continue 활용 예제*/
+        for (let i = 0; i < 5; i++) {
+            if (i === 3) continue;
+            console.log(`continue문: ${i} 번이요.`)
+        };
+
+
+        /*break문 사용 예제*/
+        for (let i = 0; i < 5; i++) {
+
+            if (i === 3) break;
+            console.log(`break문: ${i} 번이요.`);
+        };
+
+    </script>
+</body>
+
+</html>

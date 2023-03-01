@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="randdom-table" content="Web site created using javascript" />
+    <title>randdom-table</title>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let table_val_arr = ["", "", "", "", "", ""];
+        const trleng = document.getElementsByTagName("tr").length;
+        setInterval(() => {
+          const randdom1 = String(Math.round(Math.random() * 100)).padStart(
+            2,
+            "0"
+          );
+          const randdom2 = String(Math.round(Math.random() * 100)).padStart(
+            2,
+            "0"
+          );
+          
+          let makeTable = ``;
+          
+          for (let i = trleng - 1; i > 0; i--) {
+            table_val_arr[2 * i] = table_val_arr[2 * (i - 1)];
+            table_val_arr[2 * i + 1] = table_val_arr[2 * (i - 1) + 1];
+            makeTable =
+              `
+              <tr>
+                <td>${table_val_arr[2 * i]}</td>
+                <td>${table_val_arr[2 * i + 1]}</td>
+              </tr>
+            ` + makeTable;
+          console.log(makeTable)
+          }
+
+          table_val_arr[0] = randdom1;
+          table_val_arr[1] = randdom2;
+          // makeTable =
+          //   `
+          //   <tr>
+          //     <td>${table_val_arr[0]}</td>
+          //     <td>${table_val_arr[1]}</td>
+          //   </tr>
+          // ` + makeTable;
+          // console.log (makeTable);
+          document.querySelector(`table`).innerHTML = `${makeTable}`;
+        }, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

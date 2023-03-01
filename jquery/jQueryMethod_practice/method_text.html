@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        // 예제1
+        $(document).ready(function () {
+            /* <div> 요소 안의 내용을 가져와서 그 내용을 출력. 
+            <div> 요소가 여러 개 있으면 모든 내용 가져옴.
+            HTML 태그는 제외한다는 것에 주의 할 것!!!*/
+            var jbText = $('div').text();
+            alert(jbText);
+        });
+
+        // 예제2
+        $(document).ready(function () {
+                /*div 요소 안의 내용을 지우고 새로운 내용 삽입.
+                div 요소가 여러 개 있으면 모든 요소에 적용.
+                삽입하는 내용에 있는 HTML 태그는 태그가 아니라 텍스트로 인식!!!*/
+            $('div').text('<p>Aenean nec mollis.</p>');
+        });
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Lorem ipsum dolor.</h1>
+    </div>
+    <div>
+        <h1>Aenean nec mollis.</h1>
+    </div>
+</body>
+
+</html>

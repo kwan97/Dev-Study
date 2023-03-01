@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <title>my-app</title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cusDate = (date, adst, gmt) => {
+        return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}T${String(
+          date.getHours()
+        ).padStart(2, "0")}:${String(date.getMinutes()).padStart(
+          2, "0")}:${String(date.getSeconds()).padStart(2, "0")}${adst}${gmt}00`;
+      };
+
+      const makeDate = (date) => {
+        let month = date.getMonth() + 1;
+        if (month === 13) month = 1;
+        return `
+            ${date.getFullYear()}.${month}.${date.getDate()}
+            ${String(date.getHours()).padStart(2, "0")}:${String(
+          date.getMinutes()
+        ).padStart(2, "0")}
+            `;
+      };
+
+      setInterval(() => {
+        let date = new Date();
+        let date_us = new Date(cusDate(date, "+", "23"));
+        let date_litu = new Date(cusDate(date, "+", "16"));
+        let date_sing = new Date(cusDate(date, "+", "10"));
+        let date_ko = new Date(cusDate(date, "+", "09"));
+
+        document.getElementById("us").innerHTML = `${makeDate(date_us)}`;
+        document.getElementById("litu").innerHTML = `${makeDate(date_litu)}`;
+        document.getElementById("sing").innerHTML = `${makeDate(date_sing)}`;
+        document.getElementById("ko").innerHTML = `${makeDate(date_ko)}`;
+      }, 1000);
+    });
+
+    const makeDate = (date) => {
+      let month = date.getMonth() + 1;
+      if (month === 13) month = 1;
+      return `
+            ${date.getFullYear()}.${month}.${date.getDate()}
+            ${String(date.getHours()).padStart(2, "0")}:${String(
+        date.getMinutes()
+      ).padStart(2, "0")}
+            `;
+    };
+    const makeSubmitDate = () => {
+      let input_date_str = document.getElementById("input_time").value;
+      input_date_str.replace(" ", "T");
+      let make_date_us = new Date(input_date_str + ":00+2300");
+      let make_date_litu = new Date(input_date_str + ":00+1600");
+      let make_date_sing = new Date(input_date_str + ":00+1000");
+      let make_date_ko = new Date(input_date_str + ":00+0900");
+
+      document.getElementById("res_us").innerHTML = `${makeDate(
+        make_date_us
+      )}`;
+      document.getElementById("res_litu").innerHTML = `${makeDate(
+        make_date_litu
+      )}`;
+      document.getElementById("res_sing").innerHTML = `${makeDate(
+        make_date_sing
+      )}`;
+      document.getElementById("res_ko").innerHTML = `${makeDate(
+        make_date_ko
+      )}`;
+    };
+  </script>
+</head>
+
+<body>
+  ==검색시간==<br />
+  yyyy.mm.dd hh:mm
+  <form>
+    <input id="input_time" type="text" />
+    <button type="button" onclick="makeSubmitDate()">제출</button>
+  </form>
+  미국 (GMT-5)
+  <div id="res_us"></div>
+  리투아니아 (GMT+2)
+  <div id="res_litu"></div>
+  싱가폴 (GMT+8)
+  <div id="res_sing"></div>
+  한국 (GMT+9)
+  <div id="res_ko"></div>
+  <br />
+
+  ==현재시간==
+  <div>미국 (GMT-5)</div>
+  <span id="us"></span>
+  <div>리투아니아 (GMT+2)</div>
+  <span id="litu"></span>
+  <div>싱가폴 (GMT+8)</div>
+  <span id="sing"></span>
+  <div>한국 (GMT+9)</div>
+  <span id="ko"></span>
+</body>
+
+</html>

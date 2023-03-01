@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+      // 예제1
+      // $(document).ready(function () {
+      //     $('button#jbInputButton').click(function () {
+      //         var jb = $('input#jbInput').val();
+      //         alert(jb);
+      //     });
+      // });
+
+      // // 예제2
+      // $(document).ready(function () { //select 양식에서 값이 바뀌면, 그 값을 출력
+      //     $('select#jbSelect').change(function () {
+      //         var jb = $('select#jbSelect').val();
+      //         alert(jb);
+      //     });
+      // });
+
+      // 예제3
+      $(document).ready(function () {
+        $("button#jbInputButton").click(function () {
+          $("input#jbInput").val("ABCDE");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- <p><input type="text" id="jbInput"> <button id="jbInputButton">Click</button></p> -->
+
+    <select id="jbSelect">
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+
+    <p>
+      <input type="text" id="jbInput" />
+      <button id="jbInputButton">Click</button>
+    </p>
+  </body>
+</html>

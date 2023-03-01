@@ -1,0 +1,94 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript_practice</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+
+        //clik값 출력) 순수javascript .getElementById코드
+
+        function gop(value){
+            var gopValue = document.getElementById("one").value;
+            alert("출력 값= $"+ gopValue*500)
+        }
+
+        function change(value) {
+                document.getElementById("count").value= 500*value;
+                // getElenmentById("접근할 HTML 요소명").innerHTML="바꿀 텍스트";
+                document.getElementById("totalValue").innerHTML = "Total price: $" + 500 * value;
+            };
+        
+        //clik값 출력) 순수javascript .getElementByClass코드
+        function change(value) {
+                document.getElementByClass("count").value= 500*value;
+                // getElenmentByClass("접근할 HTML 요소명").innerHTML="바꿀 텍스트";
+                document.getElementByClss("totalValue").innerHTML = "Total price: $" + 500 * value;
+            };
+
+        //clik값 출력) jQuery 코드
+        // $(function() {
+
+        //     $("#submit").click(function() {
+        //         var submitValue = $("#one").val();
+        //         // $("#totalValue").text('Total price: $: '+submitValue);
+        //         // $('div').text('Total price: $: '+ submitValue);
+        //         alert("Total Value: $"+submitValue*500);  
+        //     }); 
+
+        //     $('#two').click(function(){
+        //         $('#count').val('2');
+        //         $('#totalValue').text('Total price: $1000');
+        //     });
+
+        //     $('#four').click(function(){
+        //         $('#count').val('4');
+        //         $('#totalValue').text('Total price: $2000');
+        //     });
+        // }); 
+    </script>
+</head>
+<body>
+        <!-- 순수 javascript .getElementByClss 코드 사용시 id -> class 변경할 것! -->
+        <p>Product price: $500</p>
+        
+        <div id='totalValue'>Total price: $500</div>
+        <br>
+
+        <form>
+            <input type="number" id ="one" placeholder="곱할 값을 입력하시오.">
+            <button id="submit" onclick="gop()">입력</button>
+        </form>
+
+        <input type="button" id ='two' onclick="change(2)" value="X2">
+        <input type="button" id ='four' onclick="change(4)" value="X4">
+
+        <br>                                                                                                       
+            Button Value: <input type="text" id="count" value="">
+        <br>
+        
+        <!-- *************************************************************************************** -->
+
+        <!-- click이벤트 몸풀기 -->
+        <br>
+        <br>
+        <button class="searchButton" id="pracBtn">검색</button>
+        <script>
+
+            // jQuery
+            $(function() {
+                $("#pracBtn").click(function(){
+                    alert("검색하기!!!");
+                });
+            });
+
+            // // 순수 javascript
+            // let click = document.querySelector(".searchButton");
+            // click.addEventListener("click", function() {
+            //     alert("검색하기");
+            // })
+        </script>
+
+    </body>
+
+    </html>

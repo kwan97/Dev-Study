@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+      // 입력값 출력 예제) 순수javascript 코드
+      function printName() {
+        const name = document.getElementById("name").value;
+        document.getElementById("result").innerText = name;
+      }
+
+      // 입력값 출력 예제) jQuery 코드
+      // $(function() {
+      //     $("#name").keyup(function() {
+      //         const write = $(this).val();
+      //         $("#result").text(write);
+      //     });
+      // });
+    </script>
+  </head>
+
+  <body>
+    <input id='name' onkeyup='printName()' /> 
+    <div id="result"></div>
+
+    <input id="name" />
+    <div id="result"></div>
+  </body>
+</html>

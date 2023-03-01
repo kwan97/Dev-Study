@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handler</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <button id="kwanButton">click</button>
+    </div>
+
+    <script>
+        console.time('test time');
+        const kwanButton1 = document.getElementById("kwanButton");
+        var change2;
+
+        /* 함수 */
+        change2 = kwanButton1.addEventListener('click', () => {
+            console.log('change2 작동!');
+        });
+
+        /*함수 선언문(공통)*/
+        kwanButton1.addEventListener("click", ch1);
+
+        function ch1(test1) {
+            
+            console.log('테스트: ' + test1);
+
+        };
+        ch1('1번' + change2);
+
+        function sleep(sec) {
+            return new Promise(resolve => setTimeout(resolve, sec * 1000));
+        } // 함수정의
+
+        await sleep(10);// 최근 추가된 Top-Level Await 문법으로 인해 바로 await를 사용할수도 있다.
+        
+        
+
+        /* 함수 표현식*/
+        $(document).ready(function () {
+            const change1 = kwanButton1.addEventListener('click', () => {
+                console.log('함수표현식 테스트: change1')
+            });
+        });
+
+        console.timeEnd('test time');
+    </script>
+    <script src="./js/hoist_test1.js"></script>
+    <script src="./js/hoist_test2.js"></script>
+
+
+</body>
+
+</html>

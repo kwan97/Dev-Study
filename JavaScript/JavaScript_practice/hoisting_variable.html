@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 변수 활용 코드</title>
+    <script>
+
+        function fnc() {
+
+            //let 과 const 콘솔값은 var를 신경쓰지않은듯이 호이스팅 되지않으며 값이 출력된다.
+            let dong = 'dong';
+            let soo = kyu;
+            const na = soo;
+            soo = 'soo';
+            dong = soo;
+            var kyu = 'kyu'; //var변수는 역시나 전역 변수로서 위치를 조정해줄때마다 콘솔 창에 큰 변화를 줌.
+
+            console.log(dong);
+        }
+
+        fnc();
+
+        /***********************************************************************************/
+
+        /* 테스트 결과 출력 변수별 호이스팅은 상관없이 출력 코드의 위치(순서)에 따라 출력됨*/
+        const as = '메롱';
+        let qw = 'qw';
+        let zx = 'zx';
+        var kwan = 'kwan';
+
+        function func() {
+            let dong = 'dong';
+            let soo = kyu;
+            const na = soo;
+            soo = 'soo';
+            dong = soo;
+            var kyu = 'kyu';
+
+            const as = '메롱';
+            let qw = 'qw';
+            let zx = 'zx';
+            var kwan = 'hi';
+
+            console.log("variableTestCode_func(): ", kwan, qw, as );
+
+            console.log("variableTestCode_func(): ", {
+                kwan, qw, as}, {
+                kwan, qw, as}
+                );
+        }
+
+        func();
+
+        console.log(qw);
+
+    </script>
+
+</head>
+
+<body>
+</body>
+</html>

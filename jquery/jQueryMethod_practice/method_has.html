@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+
+        $(document).ready(function () { 
+
+            //하위 요소로 a 요소를 갖는 li 요소 전부 선택하여 빨간색 테두리 적용
+            $('li:has( a )').css('border', '1px solid red');
+            
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>jQuery Selector - :has()</h1>
+    <ul>
+        <li>Lorem</li>
+        <li><a href="#">Ipsum</a></li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li><a href="#">Amet</a></li>
+    </ul>
+</body>
+
+</html>

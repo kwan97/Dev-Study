@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopPropagation Example</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(function () {
+
+            $("a").click(function (e) {
+                e.preventDefault(); //고유 속성을 중지(중단)시킨다.
+                alert("e.preventDefault()");
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+    <!-- preventDefault() 예제 html -->
+    <a href="https://pa-pico.tistory.com">PAPICO 블로그로</a>
+
+
+    <section id="bigBtn">
+        <div id="mBtn">
+            <input type="button" id="sBtn" value="클릭!">
+        </div>
+    </section>
+
+    <script src="./js/btn_ctr.js"></script>
+
+</body>
+
+</html>

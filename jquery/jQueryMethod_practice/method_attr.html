@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            font-size: 30px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        // 예제1
+        // $(document).ready(function () { //h1 요소의 class 속성 값을 가져와서 출력
+        //     var hClass = $('h1').attr('class');
+        //     $('span').text(hClass);
+        // });
+
+        // 예 제2
+        // $(document).ready(function () { //input 요소에 Input your address를 값으로 하는 placeholder 속성을 추가
+        //     $('input').attr('placeholder', 'Input your address');
+        // });
+    </script>
+</head>
+
+<body>
+    <!-- a 요소의 href 속성값을 .attr()과 .prop()로 가져오는 예제 -->
+    <p><a href="#">Link</a></p>
+    <p>
+        <script>
+            document.write($('a').attr('href'));
+            // 결과 :  #
+            
+            document.write('<br>');
+
+            document.write($('a').prop('href'));
+            // 결과 : http://www.localhost:8080/front/intro/join#none"
+        </script>
+    </p>
+
+    <!-- <h1 class="hello">Lorem ipsum dolor.</h1>
+    <p>h1 class value is : <span></span></p> -->
+
+    <!-- <input type="text"> -->
+</body>
+
+</html>
